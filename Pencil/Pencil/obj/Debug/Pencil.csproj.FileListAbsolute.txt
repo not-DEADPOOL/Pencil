@@ -1,0 +1,11 @@
+C:\Users\Utente\source\repos\Pencil\Pencil\bin\Debug\Pencil.exe.config
+C:\Users\Utente\source\repos\Pencil\Pencil\bin\Debug\Pencil.exe
+C:\Users\Utente\source\repos\Pencil\Pencil\bin\Debug\Pencil.pdb
+C:\Users\Utente\source\repos\Pencil\Pencil\bin\Debug\Libreria_pencil.dll
+C:\Users\Utente\source\repos\Pencil\Pencil\bin\Debug\Libreria_pencil.pdb
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.csproj.AssemblyReference.cache
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.csproj.SuggestedBindingRedirects.cache
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.csproj.CoreCompileInputs.cache
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.csproj.CopyComplete
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.exe
+C:\Users\Utente\source\repos\Pencil\Pencil\obj\Debug\Pencil.pdb
