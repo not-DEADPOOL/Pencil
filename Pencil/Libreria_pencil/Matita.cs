@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,13 +22,17 @@ namespace Libreria_pencil
     {
         public int lungh;
         public Colors colori;
+        int counter;
         string cronologia;
         public righe punta;
         public righe fine;
-        public righe corpo;
+        public List<righe> corpo;
 
         public Matita()
         {
+            lungh = 10;
+            cronologia = "";
+            colori = 0;
             punta.one = @"_____";
             punta.two = @"    /`-.";
             punta.three = @"--<     ##";
@@ -37,13 +41,16 @@ namespace Libreria_pencil
             fine.two = @" /\   ";
             fine.three = @"<()>--";
             fine.four = @" \/___";
-            corpo.one = @"|______|";
-            corpo.two = @"|      |";
-            corpo.three = @"|------|";
-            corpo.four = @"|______|";
-            lungh = 10;
-            cronologia = "";
-            colori = 0;
+            corpo = new List<righe>();
+            for (int i = 0; i < lungh; i++)
+            {
+                righe c;
+                c.one = @"|______|";
+                c.two = @"|      |";
+                c.three = @"|------|";
+                c.four = @"|______|";
+                corpo.Add(c);
+            }
             Console.WriteLine(@"
                   _   _ _         
                  | | (_| |                      _____ __             __ 
@@ -53,7 +60,7 @@ namespace Libreria_pencil
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
                                                                                                                                         
 ");
-            Thread.Sleep(3000);
+            Thread.Sleep(2500);
             Console.Clear();
         }
 
