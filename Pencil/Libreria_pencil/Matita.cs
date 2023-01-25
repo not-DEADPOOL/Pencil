@@ -64,10 +64,12 @@ namespace Libreria_pencil
             Console.Clear();
         }
 
-        //public string Scrivi(string s)
-        //{
-
-        //}
+        public string Scrivi(string s)
+        {
+           for(i=0; i<s.Lenght;i++){
+              Console.Write($"{s[i]}");
+           }
+        }
     }
     public class MatitaGommino : Matita
     {
