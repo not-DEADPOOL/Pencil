@@ -8,7 +8,6 @@ using loading;
 //https://www.codeproject.com/Questions/121424/Convert-String-to-System-ConsoleColor
 namespace Libreria_pencil
 {
-    enum Colors {blu,rosso,verde,viola,arancione}
     public struct righe
     {
         public string one;
@@ -23,15 +22,14 @@ namespace Libreria_pencil
         public string cronologia;
         public righe punta;
         public righe fine;
-        Colors colori;
         public List<righe> corpo;
 
-        public Matita()
+        public Matita(int lungh,string color)
         {
             //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
             //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
-            Console.ForegroundColor = (Colors)colori.Parse(typeof(Colors), "blue", true);
-            lungh = 10;
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color, true);
+            this.lungh = lungh;
             cronologia = "";
             {
                 punta.one = @"_____";
@@ -44,7 +42,7 @@ namespace Libreria_pencil
                 fine.four = @" \/___";
             }
             corpo = new List<righe>();
-            for (int i = 0; i < lungh; i++)
+            for (int i = 0; i < this.lungh; i++)
             {
                 righe c;
                 //c = @"|______|" + "\n" + @"|      |" + "\n" + @"|------|" + "\n" + @"|______|" + "\n";
@@ -57,7 +55,7 @@ namespace Libreria_pencil
             Console.WriteLine(@"
                   _   _ _         
                  | | (_| |                      _____ __             __ 
-  _ __ ___   __ _| |_ _| |_ __ _               / ___// /_____ ______/ /_
+  _ __ ___   __ _| |__| |_ __ _               / ___// /_____ ______/ /_
  | '_ ` _ \ / _` | __| | __/ _` |    ______    \__ \/ __/ __ `/ ___/ __/
  | | | | | | (_| | |_| | || (_| |   /_____/   ___/ / /_/ /_/ / /  / /_ 
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
@@ -66,6 +64,7 @@ namespace Libreria_pencil
             Thread.Sleep(1000);
             Console.Clear();
         }
+        public Matita():this(10,"blue"){} 
 
         public string Scrivi(string s)
         {
