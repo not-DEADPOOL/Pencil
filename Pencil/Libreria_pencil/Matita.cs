@@ -24,21 +24,20 @@ namespace Libreria_pencil
         public righe fine;
         public List<righe> corpo;
 
-        public Matita(int lungh,string color)
+        public Matita(int lungh, string color)
         {
             //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
             //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
-            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color, true);
             this.lungh = lungh;
             cronologia = "";
             {
                 punta.one = @"_____";
                 punta.two = @"    /`-.";
-                punta.three = @"--<     ##";
+                punta.three = @"---<   ##";
                 punta.four = @"____\,-'";
                 fine.one = @"  ____";
                 fine.two = @" /\   ";
-                fine.three = @"<()>--";
+                fine.three = @"<()>--|";
                 fine.four = @" \/___";
             }
             corpo = new List<righe>();
@@ -46,16 +45,16 @@ namespace Libreria_pencil
             {
                 righe c;
                 //c = @"|______|" + "\n" + @"|      |" + "\n" + @"|------|" + "\n" + @"|______|" + "\n";
-                c.one = @"|______|";
-                c.two = @"|      |";
-                c.three = @"|------|";
-                c.four = @"|______|";
+                c.one = @"________";
+                c.two = @"        ";
+                c.three = @"-------|";
+                c.four = @"________";
                 corpo.Add(c);
             }
             Console.WriteLine(@"
                   _   _ _         
                  | | (_| |                      _____ __             __ 
-  _ __ ___   __ _| |__| |_ __ _               / ___// /_____ ______/ /_
+  _ __ ___   __ _| |__ | |_ __ _               / ___// /_____ ______/ /_
  | '_ ` _ \ / _` | __| | __/ _` |    ______    \__ \/ __/ __ `/ ___/ __/
  | | | | | | (_| | |_| | || (_| |   /_____/   ___/ / /_/ /_/ / /  / /_ 
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
@@ -63,52 +62,60 @@ namespace Libreria_pencil
 ");
             Thread.Sleep(1000);
             Console.Clear();
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color, true);
         }
-        public Matita():this(10,"blue"){} 
+        public Matita() : this(10, "blue") { }
 
         public string Scrivi(string s)
         {
-            string scrivo="";
-           for(int i=0;i<s.Length; i++){
-                if (lungh == 0)
+            string scrivo = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (lungh <= 0)
                     break;
-                if (counter%10==0)                
+                if (counter == 10)
+                {
+                    counter = 0;
                     lungh--;
-              counter+= s[i]!=' ' || s[i] != '\n' ? 1 : 0;
-              scrivo += s[i];
-           }
+                }
+                if (s[i] != ' ')
+                    counter++;
+
+                scrivo += s[i];
+            }
             cronologia += scrivo;
             return scrivo;
         }
-        public void Stampa() {
+        public void Stampa()
+        {
             //for (int i = 0; i < corpo.Count; i++)
             //{
-                Console.WriteLine(fine.one + StampaCorpo(1) + punta.one);
-                Console.WriteLine(fine.two + StampaCorpo(2) + punta.two);
-                Console.WriteLine(fine.three + StampaCorpo(3) + punta.three);
-                Console.WriteLine(fine.four + StampaCorpo(4) + punta.four);
+            Console.WriteLine(fine.one + StampaCorpo(1) + punta.one);
+            Console.WriteLine(fine.two + StampaCorpo(2) + punta.two);
+            Console.WriteLine(fine.three + StampaCorpo(3) + punta.three);
+            Console.WriteLine(fine.four + StampaCorpo(4) + punta.four);
             //}
         }
         string StampaCorpo(int n)
         {
-            
+
             string riga = "";
             switch (n)
             {
                 case 1:
-                    for (int i = 0; i < corpo.Count; i++)
+                    for (int i = 0; i < lungh; i++)
                         riga += corpo[i].one;
                     return riga;
                 case 2:
-                    for (int i = 0; i < corpo.Count; i++)
+                    for (int i = 0; i < lungh; i++)
                         riga += corpo[i].two;
                     return riga;
                 case 3:
-                    for (int i = 0; i < corpo.Count; i++)
+                    for (int i = 0; i < lungh; i++)
                         riga += corpo[i].three;
                     return riga;
                 case 4:
-                    for (int i = 0; i < corpo.Count; i++)
+                    for (int i = 0; i < lungh; i++)
                         riga += corpo[i].four;
                     return riga;
                 default:
@@ -116,7 +123,7 @@ namespace Libreria_pencil
             }
             return "";
         }
-        
+
     }
     public class MatitaGommino : Matita
     {
