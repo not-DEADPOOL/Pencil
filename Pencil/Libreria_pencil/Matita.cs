@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using loading;
 
 namespace Libreria_pencil
 {
@@ -14,25 +15,21 @@ namespace Libreria_pencil
         public string three;
         public string four;
     }
-    public enum Colors
-    {
-        nero, blu, rosso, verde, viola, rosa
-    }
     public class Matita
     {
         public int lungh;
-        public Colors colori;
         int counter;
-        string cronologia;
+        public string cronologia;
         public righe punta;
         public righe fine;
         public List<righe> corpo;
 
         public Matita()
         {
-            lungh = 10;
+            //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
+            //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
+            lungh = 5;
             cronologia = "";
-            colori = 0;
             punta.one = @"_____";
             punta.two = @"    /`-.";
             punta.three = @"--<     ##";
@@ -45,6 +42,7 @@ namespace Libreria_pencil
             for (int i = 0; i < lungh; i++)
             {
                 righe c;
+                //c = @"|______|" + "\n" + @"|      |" + "\n" + @"|------|" + "\n" + @"|______|" + "\n";
                 c.one = @"|______|";
                 c.two = @"|      |";
                 c.three = @"|------|";
@@ -60,15 +58,59 @@ namespace Libreria_pencil
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
                                                                                                                                         
 ");
-            Thread.Sleep(2500);
+            Thread.Sleep(1000);
             Console.Clear();
         }
 
         public string Scrivi(string s)
         {
-           for(i=0; i<s.Lenght;i++){
-              Console.Write($"{s[i]}");
+            string scrivo="";
+           for(int i=0;i<s.Length; i++){
+                if (lungh == 0)
+                    break;
+                if (counter%10==0)                
+                    lungh--;
+              counter+= s[i]!=' ' || s[i] != '\n' ? 1 : 0;
+              scrivo += s[i];
            }
+            cronologia += scrivo;
+            return scrivo;
+        }
+        public void Stampa() {
+            //for (int i = 0; i < corpo.Count; i++)
+            //{
+                Console.WriteLine(fine.one + StampaCorpo(1) + punta.one);
+                Console.WriteLine(fine.two + StampaCorpo(2) + punta.two);
+                Console.WriteLine(fine.three + StampaCorpo(3) + punta.three);
+                Console.WriteLine(fine.four + StampaCorpo(4) + punta.four);
+            //}
+        }
+        string StampaCorpo(int n)
+        {
+            
+            string riga = "";
+            switch (n)
+            {
+                case 1:
+                    for (int i = 0; i < corpo.Count; i++)
+                        riga += corpo[i].one;
+                    return riga;
+                case 2:
+                    for (int i = 0; i < corpo.Count; i++)
+                        riga += corpo[i].two;
+                    return riga;
+                case 3:
+                    for (int i = 0; i < corpo.Count; i++)
+                        riga += corpo[i].three;
+                    return riga;
+                case 4:
+                    for (int i = 0; i < corpo.Count; i++)
+                        riga += corpo[i].four;
+                    return riga;
+                default:
+                    break;
+            }
+            return "";
         }
     }
     public class MatitaGommino : Matita
