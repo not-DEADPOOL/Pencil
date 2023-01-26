@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using loading;
-
+//https://www.codeproject.com/Questions/121424/Convert-String-to-System-ConsoleColor
 namespace Libreria_pencil
 {
+    enum Colors {blu,rosso,verde,viola,arancione}
     public struct righe
     {
         public string one;
@@ -22,22 +23,26 @@ namespace Libreria_pencil
         public string cronologia;
         public righe punta;
         public righe fine;
+        Colors colori;
         public List<righe> corpo;
 
         public Matita()
         {
             //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
             //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
-            lungh = 5;
+            Console.ForegroundColor = (Colors)colori.Parse(typeof(Colors), "blue", true);
+            lungh = 10;
             cronologia = "";
-            punta.one = @"_____";
-            punta.two = @"    /`-.";
-            punta.three = @"--<     ##";
-            punta.four = @"____\,-'";
-            fine.one = @"  ____";
-            fine.two = @" /\   ";
-            fine.three = @"<()>--";
-            fine.four = @" \/___";
+            {
+                punta.one = @"_____";
+                punta.two = @"    /`-.";
+                punta.three = @"--<     ##";
+                punta.four = @"____\,-'";
+                fine.one = @"  ____";
+                fine.two = @" /\   ";
+                fine.three = @"<()>--";
+                fine.four = @" \/___";
+            }
             corpo = new List<righe>();
             for (int i = 0; i < lungh; i++)
             {
@@ -112,6 +117,7 @@ namespace Libreria_pencil
             }
             return "";
         }
+        
     }
     public class MatitaGommino : Matita
     {
