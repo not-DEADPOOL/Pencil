@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +12,7 @@ namespace Pencil
         static void Main(string[] args)
         {
             Matita m = new Matita();
-            Console.WriteLine(m.fine.one + m.corpo.one + m.punta.one);
-            Console.WriteLine(m.fine.two + m.corpo.two + m.punta.two);
-            Console.WriteLine(m.fine.three + m.corpo.three + m.punta.three);
-            Console.WriteLine(m.fine.four + m.corpo.four + m.punta.four);
+            m.Stampa();
             Console.ReadKey();
         }
     }
