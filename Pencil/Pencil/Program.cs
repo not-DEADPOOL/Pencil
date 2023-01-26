@@ -11,8 +11,10 @@ namespace Pencil
     {
         static void Main(string[] args)
         {
-            Matita m = new Matita();
-            m.Stampa();
+            Matita matita = new Matita(3,"blue");
+            matita.Stampa();
+            matita.Scrivi("1                22");
+            matita.Stampa();
             Console.ReadKey();
         }
     }
