@@ -12,9 +12,9 @@ namespace Pencil
         static void Main(string[] args)
         {
             Matita matita = new Matita(3,"blue");
-            matita.Stampa();
-            matita.Scrivi("1                22");
-            matita.Stampa();
+            Console.WriteLine(matita);
+            Console.WriteLine(matita.Scrivi("12245673567234522222222"));
+            Console.WriteLine(matita);
             Console.ReadKey();
         }
     }
