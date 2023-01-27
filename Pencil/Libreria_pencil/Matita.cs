@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using loading;
-//https://www.codeproject.com/Questions/121424/Convert-String-to-System-ConsoleColor
+
 namespace Libreria_pencil
 {
     public struct righe
@@ -60,19 +60,23 @@ namespace Libreria_pencil
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
                                                                                                                                         
 ");
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             Console.Clear();
-            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color, true);
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color=="black"?"blue":color, true);
         }
-        public Matita() : this(10, "blue") { }
+        public Matita() : this(10, "black") { }
 
         public string Scrivi(string s)
         {
+            Console.BackgroundColor = ConsoleColor.White;
             string scrivo = "";
             for (int i = 0; i < s.Length; i++)
             {
                 if (lungh <= 0)
+                {
+
                     break;
+                }
                 if (counter == 10)
                 {
                     counter = 0;
@@ -84,21 +88,11 @@ namespace Libreria_pencil
                 scrivo += s[i];
             }
             cronologia += scrivo;
+            Console.ResetColor();
             return scrivo;
-        }
-        public void Stampa()
-        {
-            //for (int i = 0; i < corpo.Count; i++)
-            //{
-            Console.WriteLine(fine.one + StampaCorpo(1) + punta.one);
-            Console.WriteLine(fine.two + StampaCorpo(2) + punta.two);
-            Console.WriteLine(fine.three + StampaCorpo(3) + punta.three);
-            Console.WriteLine(fine.four + StampaCorpo(4) + punta.four);
-            //}
         }
         string StampaCorpo(int n)
         {
-
             string riga = "";
             switch (n)
             {
@@ -124,9 +118,13 @@ namespace Libreria_pencil
             return "";
         }
 
+        public override string ToString()
+        {
+            return fine.one + StampaCorpo(1) + punta.one + "\n" 
+                + fine.two + StampaCorpo(2) + punta.two + "\n" 
+                + fine.three + StampaCorpo(3) + punta.three + "\n" 
+                + fine.four + StampaCorpo(4) + punta.four + "\n";
+        }
     }
-    public class MatitaGommino : Matita
-    {
-
-    }
+    
 }
