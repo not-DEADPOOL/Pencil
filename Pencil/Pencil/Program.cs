@@ -11,10 +11,15 @@ namespace Pencil
     {
         static void Main(string[] args)
         {
-            Matita matita = new Matita(3,"blue");
+            Matita matita = new Matita(5);
             Console.WriteLine(matita);
-            Console.WriteLine(matita.Scrivi("12245673567234522222222"));
+            matita.Scrivi("11 11111111 11111111");
             Console.WriteLine(matita);
+            MatitaGommino matita1 = new MatitaGommino("red", 5, 3);
+            Console.WriteLine(matita1);
+            matita1.Scrivi("1222 222   2");
+            matita1.Scancellah(6);
+            Console.WriteLine(matita1);
             Console.ReadKey();
         }
     }
