@@ -12,7 +12,7 @@ namespace Libreria_pencil
     {
         public righe fine_gomma;
         public int lungh_gomma;
-        public MatitaGommino(string color,int lungh, int lungh_gomma)
+        public MatitaGommino(string color, int lungh, int lungh_gomma)
         {
             Console.ResetColor();
             Console.CursorVisible = false;
@@ -38,24 +38,14 @@ namespace Libreria_pencil
                 fine_gomma.four = @"  /____";
             }
 
-            Console.WriteLine(@"
-                  _   _ _             _____    
-                 | | (_| |           / ___ `.                _____ __             __ 
-  _ __ ___   __ _| |_ _| |_ __ _    |_/___) |               / ___// /_____  _____/ /_
- | '_ ` _ \ / _` | __| | __/ _` |    .'____.'     ______    \__ \/ __/ __ `/ ___/ __/
- | | | | | | (_| | |_| | || (_| | _ / /_____     /_____/   ___/ / /_/ /_/ / /  / /_ 
- |_| |_| |_|\__,_|\__|_|\__\__,_|(_)|_______|             /____/\__/\__,_/_/   \__/  
-                                                                                                                                        
-");
-            Thread.Sleep(2000);
-            Console.Clear();
-
-            Console.CursorVisible = true;
             this.lungh_gomma = lungh_gomma;
+            Start(1);
+            Console.CursorVisible = true;
         }
-        public MatitaGommino(string color):this(color,10,5){ }
+        
+        public MatitaGommino(string color) : this(color, 10, 5) { }
         public MatitaGommino() : this("black", 10, 5) { }
-        public MatitaGommino(int l,int lg) : this("black", l, lg) { }
+        public MatitaGommino(int l, int lg) : this("black", l, lg) { }
         public override string ToString()
         {
             Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color == "black" ? "blue" : color, true);
@@ -70,8 +60,8 @@ namespace Libreria_pencil
             int counter = 0;
             if (cronologia.Length >= k)
             {
-                lungh_gomma = lungh_gomma- (k / 5);
-                if (lungh_gomma> 0)
+                lungh_gomma = lungh_gomma - (k / 5);
+                if (lungh_gomma > 0)
                 {
                     for (int i = cronologia.Length - 1; i >= k; i--)
                     {
