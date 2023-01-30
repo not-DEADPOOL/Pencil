@@ -16,8 +16,6 @@ namespace Libreria_pencil
         {
             Console.ResetColor();
             Console.CursorVisible = false;
-            //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
-            //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
             this.color = color;
             this.lungh = lungh;
             cronologia = "";
