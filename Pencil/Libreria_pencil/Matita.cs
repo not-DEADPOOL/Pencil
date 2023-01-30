@@ -23,6 +23,7 @@ namespace Libreria_pencil
         public righe punta;
         public righe fine;
         public List<righe> corpo;
+        int n;
         //Loading loadong = new Loading();
 
         public Matita(int lungh, string color)
@@ -48,13 +49,13 @@ namespace Libreria_pencil
             for (int i = 0; i < this.lungh; i++)
             {
                 righe c;
-                //c = @"|______|" + "\n" + @"|      |" + "\n" + @"|------|" + "\n" + @"|______|" + "\n";
                 c.one = @"________";
                 c.two = @"        ";
                 c.three = @"-------|";
                 c.four = @"________";
                 corpo.Add(c);
             }
+            n=0;
             Start(0);
             Console.CursorVisible = true;
         }
