@@ -31,7 +31,7 @@ namespace Libreria_pencil
             Console.CursorVisible = false;
             //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
             //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
-            this.color= color;
+            this.color = color;
             this.lungh = lungh;
             cronologia = "";
             {
@@ -55,7 +55,28 @@ namespace Libreria_pencil
                 c.four = @"________";
                 corpo.Add(c);
             }
-            Console.WriteLine(@"
+            Start(0);
+            Console.CursorVisible = true;
+        }
+        public void Start(int n)
+        {
+            if (n == 1)
+            {
+                Console.WriteLine(@"
+                  _   _ _             _____    
+                 | | (_| |           / ___ `.                _____ __             __ 
+  _ __ ___   __ _| |_ _| |_ __ _    |_/___) |               / ___// /_____  _____/ /_
+ | '_ ` _ \ / _` | __| | __/ _` |    .'____.'     ______    \__ \/ __/ __ `/ ___/ __/
+ | | | | | | (_| | |_| | || (_| | _ / /_____     /_____/   ___/ / /_/ /_/ / /  / /_ 
+ |_| |_| |_|\__,_|\__|_|\__\__,_|(_)|_______|             /____/\__/\__,_/_/   \__/  
+                                                                                                                                        
+");
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
+            else if(n==0)
+            {
+                Console.WriteLine(@"
                   _   _ _         
                  | | (_| |                      _____ __             __ 
   _ __ ___   __ _| |_ _| |_ __ _               / ___// /_____  _____/ /_
@@ -64,10 +85,9 @@ namespace Libreria_pencil
  |_| |_| |_|\__,_|\__|_|\__\__,_|            /____/\__/\__,_/_/   \__/  
                                                                                                                                         
 ");
-            Thread.Sleep(2000);
-            Console.Clear();
-            
-            Console.CursorVisible = true;
+                Thread.Sleep(2000);
+                Console.Clear();
+            }
         }
         public Matita() : this(10, "black") { }
         public Matita(int l) : this(l, "black") { }
@@ -84,14 +104,14 @@ namespace Libreria_pencil
                 Thread.Sleep(100);
             }
             Console.WriteLine();
-            Console.BackgroundColor= ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.CursorVisible = true;
             return s;
         }
         public string scrivi(string s)
         {
             string scrivo = "";
-            int counter =0;
+            int counter = 0;
             for (int i = 0; i < s.Length; i++)
             {
                 if (lungh <= 0)
@@ -109,10 +129,10 @@ namespace Libreria_pencil
                 scrivo += s[i];
             }
             cronologia += scrivo;
-         //  Console.WriteLine("c:"+cronologia);
+            //  Console.WriteLine("c:"+cronologia);
             return scrivo;
         }
-        internal string StampaCorpo(int n,int l)
+        internal string StampaCorpo(int n, int l)
         {
             string riga = "";
             switch (n)
@@ -142,11 +162,11 @@ namespace Libreria_pencil
         public override string ToString()
         {
             Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color == "black" ? "blue" : color, true);
-            return fine.one + StampaCorpo(1,lungh) + punta.one + "\n" 
-                + fine.two + StampaCorpo(2, lungh) + punta.two + "\n" 
-                + fine.three + StampaCorpo(3, lungh) + punta.three + "\n" 
+            return fine.one + StampaCorpo(1, lungh) + punta.one + "\n"
+                + fine.two + StampaCorpo(2, lungh) + punta.two + "\n"
+                + fine.three + StampaCorpo(3, lungh) + punta.three + "\n"
                 + fine.four + StampaCorpo(4, lungh) + punta.four + "\n";
         }
     }
-    
+
 }
