@@ -10,6 +10,7 @@ namespace Libreria_pencil
 {
     public class MatitaGommino : Matita
     {
+        int n; 
         public righe fine_gomma;
         public int lungh_gomma;
         public MatitaGommino(string color, int lungh, int lungh_gomma)
@@ -37,7 +38,8 @@ namespace Libreria_pencil
             }
 
             this.lungh_gomma = lungh_gomma;
-            Start(1);
+            n =1;
+            Start(n);
             Console.CursorVisible = true;
         }
         
