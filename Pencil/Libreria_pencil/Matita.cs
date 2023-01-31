@@ -24,14 +24,12 @@ namespace Libreria_pencil
         public righe fine;
         public List<righe> corpo;
         int n;
-        //Loading loadong = new Loading();
 
         public Matita(int lungh, string color)
         {
             Console.ResetColor();
-            Console.CursorVisible = false;
-            //punta = @"_____" + "\n" + @"    /`-." + "\n" + @"---<    ##" + "\n"+ @"____\,-'" + "\n";
-            //fine = @"  ____" + "\n" + @" /\   " + "\n" + @"<()>--" + "\n" + @" \/___" + "\n";
+            Console.CursorVisible = false
+            
             this.color = color;
             this.lungh = lungh;
             cronologia = "";
