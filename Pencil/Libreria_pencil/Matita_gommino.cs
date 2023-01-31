@@ -63,7 +63,7 @@ namespace Libreria_pencil
                 lungh_gomma = lungh_gomma - (k / 5);
                 if (lungh_gomma > 0)
                 {
-                    for (int i = cronologia.Length - 1; i >= k; i--)
+                    for (int i = cronologia.Length - 1; i >= cronologia.Length - 1 - k; i--)
                     {
                         counter += cronologia[i] == ' ' ? 1 : 0;
                     }
