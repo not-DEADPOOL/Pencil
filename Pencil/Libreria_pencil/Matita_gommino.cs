@@ -67,7 +67,7 @@ namespace Libreria_pencil
                     {
                         counter += cronologia[i] == ' ' ? 1 : 0;
                     }
-                    cronologia = cronologia.Remove(cronologia.Length - 1 - k - counter);
+                    cronologia = cronologia.Remove(cronologia.Length- k - counter);
                 }
             }
             Scrivi(cronologia);
