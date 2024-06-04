@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using loading;
 
 namespace Libreria_pencil
 {
@@ -28,7 +27,7 @@ namespace Libreria_pencil
         public Matita(int lungh, string color)
         {
             Console.ResetColor();
-            Console.CursorVisible = false
+            Console.CursorVisible = false;
             
             this.color = color;
             this.lungh = lungh;

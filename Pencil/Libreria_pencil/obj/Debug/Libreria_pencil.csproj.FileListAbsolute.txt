@@ -4,3 +4,9 @@ C:\Users\Utente\source\repos\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.cs
 C:\Users\Utente\source\repos\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.csproj.CoreCompileInputs.cache
 C:\Users\Utente\source\repos\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.dll
 C:\Users\Utente\source\repos\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.pdb
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\bin\Debug\Libreria_pencil.dll
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\bin\Debug\Libreria_pencil.pdb
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.csproj.AssemblyReference.cache
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.csproj.CoreCompileInputs.cache
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.dll
+C:\Users\apilati\Downloads\Pencil-main\Pencil\Libreria_pencil\obj\Debug\Libreria_pencil.pdb
